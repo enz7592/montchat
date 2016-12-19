@@ -1,0 +1,33 @@
+{% extends "layout/default.html.twig" %}
+
+{% block header %}
+{% endblock header %}
+
+{% block body %}
+<section class="loginform cf">
+    <form name="login" action="{{ action }}" method="post" accept-charset="utf-8">
+        <span style="width:100%; background-color:#ef649b; color:#FFFFFF; ">{{ error|default }}</span>
+        <ul style="width:100%;">
+            <li>
+                <label for="usermail">Login</label>
+                <input name="user[username]" placeholder="login" required
+                       value="{{ (loginUser)? loginUser.username|default : '' }}">
+            </li>
+            <li>
+                <label for="user[password]">Password</label>
+                <input type="password" name="user[password]" placeholder="password" required></li>
+            
+        </ul>
+<li>
+                <input type="submit" value="Login">
+            </li>
+        <ul style="width:100%; clear: both;">
+           
+            <li>
+                <label>Email</label>
+                <input type="text" name="user[email]" value="" placeholder="yourname@domain.com">
+            </li>
+        </ul>
+    </form>
+</section>
+{% endblock body %}

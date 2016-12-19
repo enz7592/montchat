@@ -1,0 +1,42 @@
+{% extends "layout/default.html.twig" %}
+
+{% block body %}
+ 
+  {% block javascripts %}
+    {{ parent() }}
+    <script src="/js/main.js" type="text/javascript"></script>
+{% endblock javascripts %}
+ 
+ <div class="tchat">
+     <h1>Utilisateur : {{ user.username }} </h1>
+      {% set color = (tchat.user_online)? '#f4425c' : '#419641' %}
+     
+     {% for tchat in tchats %}
+          <div class="message">
+         <span class="users user-{{- tchat.id -}}" style="background-color: {{ color }}">
+                <b>{{ tchat.username }}</b>
+            </span>
+        :
+               
+                    <td>{{  tchat.body }}</td>
+                </div>
+     {% endfor %}
+     <form method="POST" name="tchat" action="{{ action }}" accept-charset="utf-8">
+      
+          <li>
+                <label for="usermail">Message</label>
+                <input name="tchat[body]" placeholder="message" required
+                       value="{{ (loginUser)? loginUser.username|default : '' }}">
+            </li>
+             
+         
+         <input type="submit" value="tchat">
+     </form>
+            
+            
+           
+ </div>
+
+  
+
+{% endblock %}

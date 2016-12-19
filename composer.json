@@ -1,0 +1,23 @@
+{
+    "name": "root/montchat",
+    "description": "C'est juste un tchat",
+    "authors": [
+        {
+            "name": "Patrick Ngali",
+            "email": "enz7592@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.28"
+    },
+     "autoload": {
+        "psr-4": {
+            "": "Tchat/"
+        },
+        "classmap": [
+            "app/Kernel.php",
+            "app/Router.php",
+            "app/Session.php"
+        ]
+}
+}

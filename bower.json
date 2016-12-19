@@ -1,0 +1,17 @@
+{
+  "name": "montchat",
+  "description": "c'est mon chat",
+  "main": "Tchat",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    "Patrick Ngali"
+  ]
+}

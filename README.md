@@ -9,9 +9,9 @@ Requirments:
 
 VHOST example:
 --------
+
 <VirtualHost *:80>
  ServerName montchat
-
     DocumentRoot "/var/www/html/montchat/www"
         <Directory "/var/www/html/montchat/www">
             Options Indexes FollowSymLinks MultiViews
@@ -30,6 +30,8 @@ VHOST example:
           </IfModule>
         </Directory>
 </VirtualHost>
+
+
 ----------
 lancer:
 

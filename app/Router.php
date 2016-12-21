@@ -28,6 +28,7 @@ class Router {
             self::route('login','/login', 'Tchat\Controllers\UserController', 'loginAction');
             self::route('logout','/logout', 'Tchat\Controllers\UserController', 'logoutAction');
             self::route('tchat','/tchat', 'Tchat\Controllers\TchatController', 'tchatAction');
+            self::route('/','/', 'Tchat\Controllers\UserController', 'loginAction');
         }
 	public static function route($name, $pattern, $controller, $action) {
                             
@@ -46,8 +47,13 @@ class Router {
 			if (preg_match($pattern, $url, $params)) {
 				array_shift($params);                                
                                 $controller = new self::$routes[$pattern]['controller']($kernel);
-                               
-                                return $controller->{self::$routes[$pattern]['action']}(array_values($params));
+                                 
+                                 if($url == '/'){
+                                     header("Location: ".self::routeUri('login'));
+                                    }
+                                
+                                
+                return $controller->{self::$routes[$pattern]['action']}(array_values($params));
 			} 
 		}
 	}

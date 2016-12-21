@@ -62,7 +62,6 @@ class Kernel
     public function getModel($name)
     {
         $className = sprintf("Tchat\\Models\\%sModel", ucfirst(strtolower($name)));
-     //var_dump($className);die;  
         return new $className($this);
     }
 }
